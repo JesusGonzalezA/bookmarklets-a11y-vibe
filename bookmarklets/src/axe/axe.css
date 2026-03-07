@@ -1,0 +1,40 @@
+/* =========================================================
+   A11Y AUDITOR — Axe-core: estilos específicos
+   ========================================================= */
+
+/* Estado de carga */
+.a11y-axe-loading {
+  padding: 40px 24px;
+  text-align: center;
+  color: #7c85ff;
+}
+
+.a11y-axe-spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(124, 133, 255, 0.2);
+  border-top-color: #7c85ff;
+  border-radius: 50%;
+  animation: a11y-spin 0.8s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes a11y-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Impact badges en los items */
+.a11y-impact {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.a11y-impact.critical { background: #7f1d1d; color: #fca5a5; }
+.a11y-impact.serious  { background: #7c2d12; color: #fdba74; }
+.a11y-impact.moderate { background: #713f12; color: #fde047; }
+.a11y-impact.minor    { background: #1e3a5f; color: #93c5fd; }

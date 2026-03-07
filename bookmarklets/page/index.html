@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A11Y Auditor — Kit de Bookmarklets de Accesibilidad</title>
+  <meta name="description" content="Colección de bookmarklets para auditar accesibilidad web: headings, contraste, imágenes, formularios y más." />
+  <link rel="stylesheet" href="page.css" />
+</head>
+<body>
+
+  <!-- ============ SKIP LINK ============ -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◈</span>
+        <div>
+          <span class="brand-name">A11Y Auditor</span>
+          <span class="brand-tagline">Kit de bookmarklets de accesibilidad</span>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Navegación principal">
+        <a href="#como-usar">Cómo usar</a>
+        <a href="#bookmarklets">Herramientas</a>
+        <a href="#json-output">JSON para LLM</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Accesibilidad · WCAG 2.1</p>
+      <h1 id="hero-title">Audita cualquier<br /><em>página web</em><br />en un clic</h1>
+      <p class="hero-sub">
+        Abre una página, haz clic en el bookmarklet y obtén resultados visuales inmediatos
+        junto con un informe JSON listo para compartir con un LLM.
+      </p>
+      <a href="#como-usar" class="cta-btn">Ver instrucciones</a>
+    </div>
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-circle c1"></div>
+      <div class="deco-circle c2"></div>
+      <div class="deco-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO USAR ============ -->
+  <section id="como-usar" class="how-section" aria-labelledby="how-title">
+    <div class="section-inner">
+      <h2 id="how-title">Cómo usar</h2>
+      <ol class="steps" role="list">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">01</span>
+          <div>
+            <strong>Arrastra</strong> el bookmarklet que quieras a tu barra de favoritos del navegador.
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">02</span>
+          <div>
+            <strong>Navega</strong> a cualquier página web que quieras analizar.
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">03</span>
+          <div>
+            <strong>Haz clic</strong> en el bookmarklet. Aparecerá el panel lateral con los resultados.
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">04</span>
+          <div>
+            <strong>Pulsa "Copiar JSON"</strong> para obtener el informe completo y pegarlo en un LLM.
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ BOOKMARKLETS ============ -->
+  <main id="main-content">
+    <section id="bookmarklets" class="tools-section" aria-labelledby="tools-title">
+      <div class="section-inner">
+        <h2 id="tools-title">Herramientas</h2>
+        <p class="section-sub">Arrastra cualquier bookmarklet a tu barra de favoritos para instalarlo.</p>
+
+        <div id="tools-grid" class="tools-grid" role="list">
+          <!-- Renderizado por page.js a partir de bookmarklets-data.js -->
+          <p class="loading-msg" aria-live="polite">Cargando herramientas…</p>
+        </div>
+
+        <div class="fallback-msg" id="fallback-msg" hidden>
+          <p>⚠ No se encontraron los bookmarklets. Ejecuta primero <code>node build.js</code> desde la carpeta <code>bookmarklets/</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JSON PARA LLM ============ -->
+    <section id="json-output" class="json-section" aria-labelledby="json-title">
+      <div class="section-inner">
+        <h2 id="json-title">Resultado JSON para LLM</h2>
+        <p>Cada bookmarklet devuelve un objeto JSON con este esquema. Cópialo y pégalo en tu LLM favorito para obtener recomendaciones de corrección.</p>
+        <figure>
+          <figcaption class="code-caption">Esquema del resultado JSON</figcaption>
+          <pre class="code-block"><code>{
+  "tool": "headings",
+  "url": "https://ejemplo.com",
+  "timestamp": "2026-03-07T12:00:00.000Z",
+  "summary": {
+    "errors": 2,
+    "warnings": 1,
+    "passes": 5,
+    "total": 8
+  },
+  "issues": [
+    {
+      "severity": "error",
+      "message": "Nivel saltado: H2 → H4",
+      "selector": "body > main > h4:nth-of-type(1)",
+      "element": "&lt;h4 class='subtitle'&gt;...&lt;/h4&gt;",
+      "wcag": "1.3.1"
+    }
+  ]
+}</code></pre>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>A11Y Auditor — Herramienta interna de auditoría de accesibilidad</p>
+      <p class="footer-note">Basado en <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" rel="noopener noreferrer" target="_blank">WCAG 2.1 (abre nueva pestaña)</a> · Usa axe-core de Deque Systems</p>
+    </div>
+  </footer>
+
+  <!-- Data generada por build.js -->
+  <script src="bookmarklets-data.js"></script>
+  <script src="page.js"></script>
+
+</body>
+</html>
