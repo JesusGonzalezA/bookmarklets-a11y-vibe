@@ -8,18 +8,18 @@
   --bg: #070910;
   --surface: #0d1017;
   --surface-2: #141720;
-  --border: #1e2330;
-  --text: #e8eaf0;
-  --text-muted: #a5afdd;
-  --text-dim: #9fa9d7;
-  --accent: #8d98ff;
-  --accent-glow: rgba(124, 133, 255, 0.15);
+  --border: #2a3050;
+  --text: #fbfbff;
+  --text-muted: #c5cdf0;
+  --text-dim: #b8c3ec;
+  --accent: #a0aaff;
+  --accent-glow: rgba(160, 170, 255, 0.15);
   --green: #26d97f;
   --red: #ef4444;
   --orange: #f97316;
 
-  --font-display: 'Syne', 'Garamond', Georgia, serif;
-  --font-body: 'IBM Plex Mono', 'Fira Code', monospace;
+  --font-display: 'Verdana', 'Garamond', Georgia, serif;
+  --font-body: 'Verdana', 'Fira Code', monospace;
   --font-ui: system-ui, -apple-system, sans-serif;
 }
 
@@ -30,7 +30,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -112,7 +112,7 @@ a:focus-visible {
 }
 
 .brand-mark {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: var(--accent);
   rotate: 45deg;
   display: block;
@@ -123,7 +123,7 @@ a:focus-visible {
   display: block;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   color: var(--text);
   text-transform: uppercase;
@@ -131,7 +131,7 @@ a:focus-visible {
 
 .brand-tagline {
   display: block;
-  font-size: 10px;
+  font-size: 0.75rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -143,7 +143,7 @@ a:focus-visible {
 }
 
 .header-nav a {
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -168,7 +168,7 @@ a:focus-visible {
 }
 
 .hero-eyebrow {
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -177,7 +177,7 @@ a:focus-visible {
 }
 
 .hero h1 {
-  font-size: clamp(48px, 7vw, 80px);
+  font-size: clamp(3rem, 7vw, 5rem);
   color: var(--text);
   margin-bottom: 24px;
 }
@@ -190,7 +190,7 @@ a:focus-visible {
 }
 
 .hero-sub {
-  font-size: 16px;
+  font-size: 1.125rem;
   color: var(--text-dim);
   max-width: 500px;
   line-height: 1.7;
@@ -204,7 +204,7 @@ a:focus-visible {
   border: 1px solid #3a3ec5;
   color: #fff;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -270,7 +270,7 @@ a:focus-visible {
 }
 
 .how-section h2 {
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
   margin-bottom: 40px;
   color: var(--text);
 }
@@ -294,9 +294,9 @@ a:focus-visible {
 }
 
 .step-num {
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 700;
-  color: #9da7e2;
+  color: var(--text-muted);
   letter-spacing: 0.1em;
   font-family: var(--font-body);
 }
@@ -307,7 +307,7 @@ a:focus-visible {
 
 .step div {
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: 1rem;
   color: var(--text-dim);
   line-height: 1.6;
 }
@@ -319,7 +319,7 @@ a:focus-visible {
 }
 
 .tools-section h2 {
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
   margin-bottom: 12px;
   color: var(--text);
 }
@@ -327,7 +327,7 @@ a:focus-visible {
 .section-sub {
   font-family: var(--font-ui);
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 1rem;
   margin-bottom: 40px;
 }
 
@@ -387,7 +387,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 1rem;
   flex-shrink: 0;
   color: #fff;
 }
@@ -395,13 +395,13 @@ a:focus-visible {
 .card-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 1.0625rem;
   color: var(--text);
 }
 
 .card-description {
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: 0.9375rem;
   color: var(--text-dim);
   line-height: 1.6;
   flex: 1;
@@ -414,9 +414,9 @@ a:focus-visible {
   gap: 6px;
   background: var(--surface-2);
   border: 1px dashed var(--border);
-  color: #9fa9d7;
+  color: var(--text-muted);
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   padding: 10px 14px;
@@ -439,17 +439,78 @@ a:focus-visible {
 }
 
 .link-drag-icon {
-  font-size: 14px;
+  font-size: 0.875rem;
   opacity: 1;
 }
 
 .drag-hint {
   font-family: var(--font-ui);
-  font-size: 10px;
+  font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
 }
+/* ---- Botón copiar ---- */
+.copy-btn {
+  position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
 
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--border);
+  background: var(--surface-2);
+}
+
+.copy-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.copy-btn--copied {
+  color: var(--green);
+}
+
+/* Tooltip */
+.copy-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.copy-btn:hover::after,
+.copy-btn:focus-visible::after {
+  opacity: 1;
+}
+
+.copy-btn--copied::after {
+  color: var(--green);
+  border-color: rgba(38, 217, 127, 0.3);
+  opacity: 1;
+}
 /* ---- SECCIÓN JSON ---- */
 .json-section {
   padding: 80px 0;
@@ -458,7 +519,7 @@ a:focus-visible {
 }
 
 .json-section h2 {
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(1.75rem, 4vw, 2.625rem);
   margin-bottom: 16px;
   color: var(--text);
 }
@@ -472,7 +533,7 @@ a:focus-visible {
 }
 
 .code-caption {
-  font-size: 11px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -487,9 +548,9 @@ a:focus-visible {
   border-radius: 10px;
   padding: 24px;
   overflow-x: auto;
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.7;
-  color: #a8b3cf;
+  color: #d0d8f4;
 }
 
 .code-block code { font-family: var(--font-body); }
@@ -508,12 +569,12 @@ a:focus-visible {
 }
 
 .site-footer p {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--text-muted);
   font-family: var(--font-ui);
 }
 
-.footer-note { font-size: 11px; }
+.footer-note { font-size: 0.8125rem; }
 
 /* ---- Loading / fallback ---- */
 .loading-msg {
@@ -532,7 +593,7 @@ a:focus-visible {
   border-radius: 8px;
   color: #fca5a5;
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
 }
 

@@ -6,7 +6,7 @@
 .a11y-axe-loading {
   padding: 40px 24px;
   text-align: center;
-  color: #7c85ff;
+  color: #b8c0ff;
 }
 
 .a11y-axe-spinner {
@@ -26,15 +26,18 @@
 
 /* Impact badges en los items */
 .a11y-impact {
-  font-size: 10px;
+  display: inline-block;
+  font-size: 0.8125rem;
   font-weight: 700;
-  padding: 1px 6px;
+  padding: 2px 8px;
   border-radius: 3px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  vertical-align: middle;
 }
 
-.a11y-impact.critical { background: #7f1d1d; color: #fca5a5; }
-.a11y-impact.serious  { background: #7c2d12; color: #fdba74; }
-.a11y-impact.moderate { background: #713f12; color: #fde047; }
-.a11y-impact.minor    { background: #1e3a5f; color: #93c5fd; }
+.a11y-impact.critical { background: #7f1d1d; color: #ffd5d5; }
+.a11y-impact.serious  { background: #7c2d12; color: #feeacc; }
+.a11y-impact.moderate { background: #713f12; color: #fff7cc; }
+.a11y-impact.minor    { background: #1e3a5f; color: #bfdbfe; }
+.a11y-impact.revisar  { background: #3b1664; color: #ede9fe; }

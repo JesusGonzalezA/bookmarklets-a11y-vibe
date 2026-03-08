@@ -6,10 +6,10 @@
   position: absolute;
   z-index: 2147483646;
   font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1;
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 3px;
   pointer-events: none;
   white-space: nowrap;
@@ -17,13 +17,13 @@
 }
 
 .a11y-overlay-badge.error {
-  background: #ef4444;
-  color: #fff;
+  background: #7f1d1d;
+  color: #ffdfdf;
 }
 
 .a11y-overlay-badge.warning {
-  background: #f97316;
-  color: #fff;
+  background: #713f12;
+  color: #fff7cc;
 }
 
 .a11y-overlay-badge.pass {

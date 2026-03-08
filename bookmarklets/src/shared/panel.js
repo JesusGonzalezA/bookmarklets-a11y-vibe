@@ -53,11 +53,31 @@ var A11yPanel = (function () {
     var wcagHtml = issue.wcag
       ? '<span class="a11y-item-wcag">WCAG ' + escapeHtml(issue.wcag) + '</span>'
       : '';
+    var impactHtml = issue.impact
+      ? '<span class="a11y-impact ' + escapeHtml(issue.impact) + '">' + escapeHtml(issue.impact === 'revisar' ? 'Revisar' : issue.impact.toUpperCase()) + '</span>'
+      : '';
+
+    var detailHtml = '';
+    if (issue.helpUrl || issue.failureSummary) {
+      var summaryHtml = issue.failureSummary
+        ? '<p class="a11y-detail-summary">' + escapeHtml(issue.failureSummary) + '</p>'
+        : '';
+      var linkHtml = issue.helpUrl
+        ? '<a class="a11y-detail-link" href="' + escapeHtml(issue.helpUrl) + '" target="_blank" rel="noopener noreferrer">Más información ↗</a>'
+        : '';
+      detailHtml =
+        '<button class="a11y-item-toggle" aria-expanded="false" aria-controls="a11y-detail-' + index + '">▸ Cómo arreglarlo</button>' +
+        '<div class="a11y-item-detail" id="a11y-detail-' + index + '" hidden>' +
+          summaryHtml +
+          linkHtml +
+        '</div>';
+    }
 
     return (
       '<div class="a11y-item ' + issue.severity + '" data-index="' + index + '" tabindex="0" role="listitem" aria-label="' + severityLabel + ': ' + escapeHtml(truncate(issue.message, 60)) + wcagLabel + '">' +
-        '<div class="a11y-item-message">' + escapeHtml(issue.message) + '</div>' +
+        '<div class="a11y-item-message">' + impactHtml + (impactHtml ? ' ' : '') + escapeHtml(issue.message) + '</div>' +
         '<div class="a11y-item-meta">' + wcagHtml + selectorHtml + '</div>' +
+        detailHtml +
       '</div>'
     );
   }
@@ -189,7 +209,6 @@ var A11yPanel = (function () {
           e.preventDefault();
           A11yOverlay.scrollTo(idx);
         }
-        // Navegación con flechas
         if (e.key === 'ArrowDown') {
           e.preventDefault();
           var items = Array.prototype.slice.call(panel.querySelectorAll('.a11y-item'));
@@ -206,6 +225,18 @@ var A11yPanel = (function () {
             items[prevIndex].focus();
           }
         }
+      });
+    });
+
+    // Toggle de detalle: dropdown "Cómo arreglarlo"
+    panel.querySelectorAll('.a11y-item-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.textContent = (!expanded ? '▾ ' : '▸ ') + 'Cómo arreglarlo';
+        var detailEl = document.getElementById(btn.getAttribute('aria-controls'));
+        if (detailEl) detailEl.hidden = expanded;
       });
     });
   }

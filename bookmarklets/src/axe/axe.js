@@ -62,10 +62,14 @@
           var el = document.querySelector(node.target[0]);
           issues.push({
             severity: 'error',
-            message: '[' + v.impact.toUpperCase() + '] ' + v.description,
+            message: v.description,
+            impact: v.impact,
             selector: node.target.join(', '),
             element: node.html || '',
             wcag: getWcagRef(v),
+            help: v.help || '',
+            helpUrl: v.helpUrl || '',
+            failureSummary: node.failureSummary || '',
             _impact: v.impact,
             _id: v.id,
             _element: el
@@ -80,10 +84,14 @@
           var el = document.querySelector(node.target[0]);
           issues.push({
             severity: 'warning',
-            message: '[Revisar] ' + v.description,
+            message: v.description,
+            impact: 'revisar',
             selector: node.target.join(', '),
             element: node.html || '',
             wcag: getWcagRef(v),
+            help: v.help || '',
+            helpUrl: v.helpUrl || '',
+            failureSummary: node.failureSummary || '',
             _impact: v.impact || 'moderate',
             _id: v.id,
             _element: el
