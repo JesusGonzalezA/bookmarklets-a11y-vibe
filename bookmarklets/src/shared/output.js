@@ -49,6 +49,9 @@ var A11yOutput = (function () {
     console.log('%c JSON completo →', 'color:#4a5068;font-size:11px', _data);
     console.groupEnd();
 
+    // Exponer los datos para lectura externa (agentes, scripts, etc.)
+    window.A11yAuditData = _data;
+
     return _data;
   }
 
@@ -141,5 +144,9 @@ var A11yOutput = (function () {
     return outer.length > 120 ? outer.slice(0, 120) + '…' : outer;
   }
 
-  return { set: set, copy: copy, buildSummary: buildSummary, getSelector: getSelector, getElementHtml: getElementHtml };
+  function get() {
+    return _data;
+  }
+
+  return { set: set, get: get, copy: copy, buildSummary: buildSummary, getSelector: getSelector, getElementHtml: getElementHtml };
 })();
