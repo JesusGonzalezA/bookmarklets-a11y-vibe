@@ -26,6 +26,7 @@
   var links = Array.prototype.slice.call(document.querySelectorAll('a'));
 
   links.forEach(function (el) {
+    if (el.closest('#a11y-panel')) return; // Ignorar elementos dentro del panel
     var selector = A11yOutput.getSelector(el);
     var html = A11yOutput.getElementHtml(el);
     var href = el.getAttribute('href');

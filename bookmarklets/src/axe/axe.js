@@ -31,10 +31,23 @@
 
   function runAxe() {
     A11yPanel.toast('Analizando…');
+    // Limpiar overlays anteriores antes de escanear para no contaminar resultados
+    A11yOverlay.clearAll();
 
-    window.axe.run(document, {
-      runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'best-practice'] }
-    }, function (err, results) {
+    // El exclude va en el CONTEXTO (primer parámetro), no en las opciones
+    window.axe.run(
+      {
+        exclude: [
+          ['#a11y-panel'],
+          ['#a11y-toast'],
+          ['.a11y-overlay-badge'],
+          ['[data-a11y-bid]']
+        ]
+      },
+      {
+        runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'best-practice'] }
+      },
+      function (err, results) {
       if (err) {
         A11yPanel.toast('✗ Error al ejecutar axe-core.');
         console.error('[A11Y AUDITOR] axe error:', err);

@@ -31,6 +31,7 @@
   );
 
   inputs.forEach(function (el) {
+    if (el.closest('#a11y-panel')) return; // Ignorar elementos dentro del panel
     var selector = A11yOutput.getSelector(el);
     var html = A11yOutput.getElementHtml(el);
     var type = (el.getAttribute('type') || '').toLowerCase();

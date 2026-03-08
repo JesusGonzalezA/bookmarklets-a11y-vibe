@@ -10,9 +10,9 @@
   --surface-2: #141720;
   --border: #1e2330;
   --text: #e8eaf0;
-  --text-muted: #5a6080;
-  --text-dim: #9299b8;
-  --accent: #7c85ff;
+  --text-muted: #a5afdd;
+  --text-dim: #9fa9d7;
+  --accent: #8d98ff;
   --accent-glow: rgba(124, 133, 255, 0.15);
   --green: #26d97f;
   --red: #ef4444;
@@ -40,7 +40,7 @@ body {
   position: absolute;
   top: -100%;
   left: 16px;
-  background: var(--accent);
+  background: #3a3ec5;
   color: #fff;
   padding: 8px 16px;
   border-radius: 0 0 6px 6px;
@@ -67,7 +67,7 @@ a {
   text-underline-offset: 3px;
 }
 
-a:hover { color: #a5aaff; }
+a:hover { color: #b5bdff; }
 a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -200,9 +200,9 @@ a:focus-visible {
 
 .cta-btn {
   display: inline-block;
-  background: var(--accent-glow);
-  border: 1px solid rgba(124, 133, 255, 0.4);
-  color: var(--accent);
+  background: #3a3ec5;
+  border: 1px solid #3a3ec5;
+  color: #fff;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
@@ -215,9 +215,9 @@ a:focus-visible {
 }
 
 .cta-btn:hover {
-  background: rgba(124, 133, 255, 0.25);
-  border-color: var(--accent);
-  color: #a5aaff;
+  background: #2d31b0;
+  border-color: #2d31b0;
+  color: #fff;
 }
 
 /* Decoración de fondo */
@@ -296,7 +296,7 @@ a:focus-visible {
 .step-num {
   font-size: 11px;
   font-weight: 700;
-  color: var(--accent);
+  color: #9da7e2;
   letter-spacing: 0.1em;
   font-family: var(--font-body);
 }
@@ -381,15 +381,15 @@ a:focus-visible {
 .card-icon {
   width: 36px;
   height: 36px;
-  background: var(--accent-glow);
-  border: 1px solid rgba(124, 133, 255, 0.3);
+  background: #3a3ec5;
+  border: 1px solid #3a3ec5;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
   flex-shrink: 0;
-  color: var(--accent);
+  color: #fff;
 }
 
 .card-title {
@@ -414,7 +414,7 @@ a:focus-visible {
   gap: 6px;
   background: var(--surface-2);
   border: 1px dashed var(--border);
-  color: var(--accent);
+  color: #9fa9d7;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
@@ -429,8 +429,8 @@ a:focus-visible {
 }
 
 .bookmarklet-link:hover {
-  border-color: var(--accent);
-  background: var(--accent-glow);
+  border-color: #9fa9d7;
+  background: rgba(159, 169, 215, 0.1);
   cursor: grab;
 }
 
@@ -440,7 +440,7 @@ a:focus-visible {
 
 .link-drag-icon {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .drag-hint {

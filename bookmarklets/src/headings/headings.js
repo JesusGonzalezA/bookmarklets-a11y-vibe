@@ -19,6 +19,7 @@
   var h1Count = 0;
 
   headings.forEach(function (el, i) {
+    if (el.closest('#a11y-panel')) return; // Ignorar elementos dentro del panel
     var level = parseInt(el.tagName.slice(1), 10);
     var style = window.getComputedStyle(el);
     var isHidden = style.display === 'none' || style.visibility === 'hidden' || el.getAttribute('aria-hidden') === 'true';

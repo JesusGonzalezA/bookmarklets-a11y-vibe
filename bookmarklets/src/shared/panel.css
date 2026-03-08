@@ -169,10 +169,11 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding: 8px 0;
+  scroll-behavior: smooth;
 }
 
 #a11y-panel-list::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 #a11y-panel-list::-webkit-scrollbar-track {
@@ -180,8 +181,13 @@
 }
 
 #a11y-panel-list::-webkit-scrollbar-thumb {
-  background: #2a2f45;
-  border-radius: 2px;
+  background: rgba(74, 80, 104, 0.6);
+  border-radius: 3px;
+  transition: background 0.15s;
+}
+
+#a11y-panel-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 133, 255, 0.5);
 }
 
 /* ---- Grupos ---- */
@@ -217,12 +223,19 @@
   padding: 10px 16px;
   border-left: 3px solid transparent;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: background 0.12s, border-left-color 0.12s;
   position: relative;
+  outline: none;
 }
 
 .a11y-item:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.a11y-item:focus-visible {
+  background: rgba(124, 133, 255, 0.1);
+  border-left-color: #7c85ff;
+  box-shadow: inset 0 0 0 1px rgba(124, 133, 255, 0.3);
 }
 
 .a11y-item.error { border-left-color: #ef4444; }

@@ -30,6 +30,8 @@
 
   LANDMARK_DEFS.forEach(function (def) {
     var elements = Array.prototype.slice.call(document.querySelectorAll(def.selector));
+    // Filtrar elementos dentro del panel
+    elements = elements.filter(function (el) { return !el.closest('#a11y-panel'); });
 
     // Landmark requerido no encontrado
     if (elements.length === 0 && def.required) {

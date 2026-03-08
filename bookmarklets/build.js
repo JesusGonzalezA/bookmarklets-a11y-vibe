@@ -104,8 +104,14 @@ function buildBookmarklet(toolId) {
   var allJs = sharedJs + '\n\n' + toolJs;
   var minJs = minifyJs(allJs);
 
-  // IIFE completo
-  var iife = '(function(){\n' + cssInjector + '\n' + minJs + '\n})();';
+  // IIFE completo — exponer A11yOutput, A11yOverlay y A11yPanel globalmente
+  var iife = '(function(){\n' 
+    + cssInjector + '\n' 
+    + minJs + '\n'
+    + 'window.A11yOutput=A11yOutput;'
+    + 'window.A11yOverlay=A11yOverlay;'
+    + 'window.A11yPanel=A11yPanel;'
+    + '\n})();';
 
   return iife;
 }

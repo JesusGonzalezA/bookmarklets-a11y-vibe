@@ -19,6 +19,7 @@
   // --- 1. <img> estándar ---
   var imgs = Array.prototype.slice.call(document.querySelectorAll('img'));
   imgs.forEach(function (el) {
+    if (el.closest('#a11y-panel')) return; // Ignorar elementos dentro del panel
     var selector = A11yOutput.getSelector(el);
     var html = A11yOutput.getElementHtml(el);
     var hasAlt = el.hasAttribute('alt');

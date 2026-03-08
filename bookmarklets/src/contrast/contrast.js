@@ -25,6 +25,7 @@
 
   candidates.forEach(function (el) {
     if (checked >= MAX_ELEMENTS) return;
+    if (el.closest('#a11y-panel')) return; // Ignorar elementos dentro del panel
     if (!isVisible(el)) return;
     if (!hasDirectText(el)) return;
 
